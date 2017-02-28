@@ -96,7 +96,8 @@
 <meta property="og:description" content="我们给定了一个URL字符串，比如:http://www.example.com/harderk/,我们如何将这个URL中host和pathname解析出来呢？　　聪明的你可能会说，这还不容易，我用正则，做字符串匹配，将想要的部分匹配出来不就行了。对，这方法没毛病，但是有没有更简单的、不用对字符串进行各种操作的方法呢？　　答案是有的；下面我们直接看代码：
 12345678910let getLo">
 <meta property="og:image" content="http://harderk.github.io/images/2017-02-28-1.jpg">
-<meta property="og:updated_time" content="2017-02-28T14:39:19.786Z">
+<meta property="og:image" content="http://harderk.github.io/images/2017-02-28-1.jpg">
+<meta property="og:updated_time" content="2017-02-28T14:42:12.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用非操作字符串方法将给定url中的host和pathname解析出来">
 <meta name="twitter:description" content="我们给定了一个URL字符串，比如:http://www.example.com/harderk/,我们如何将这个URL中host和pathname解析出来呢？　　聪明的你可能会说，这还不容易，我用正则，做字符串匹配，将想要的部分匹配出来不就行了。对，这方法没毛病，但是有没有更简单的、不用对字符串进行各种操作的方法呢？　　答案是有的；下面我们直接看代码：
@@ -395,7 +396,7 @@
         <p>　　我们给定了一个URL字符串，比如:<a href="http://www.example.com/harderk/,我们如何将这个URL中host和pathname解析出来呢？" target="_blank" rel="external">http://www.example.com/harderk/,我们如何将这个URL中host和pathname解析出来呢？</a><br>　　聪明的你可能会说，这还不容易，我用正则，做字符串匹配，将想要的部分匹配出来不就行了。对，这方法没毛病，但是有没有更简单的、不用对字符串进行各种操作的方法呢？<br>　　答案是有的；下面我们直接看代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> getLocation = <span class="function"><span class="params">href</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> aElement = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">    aElement.href = href;</div><div class="line">    <span class="keyword">return</span> aElement;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">let</span> aElement = getLocation(<span class="string">"http://www.example.com/harderk"</span>);</div><div class="line"><span class="built_in">console</span>.log(aElement.pathname); <span class="comment">// /harderk</span></div><div class="line"><span class="built_in">console</span>.log(aElement.host); <span class="comment">// www.example.com</span></div><div class="line"><span class="built_in">console</span>.log(aElement.href); <span class="comment">// http://www.example.com/harderk</span></div></pre></td></tr></table></figure>
 <p>　　上面方法的核心是<a>标签，通过node节点获得一个HTMLElement对象，从这个对象的属性我们直接获得我们想要的结果。那么<a>节点到底是何方神圣呢？我们来看一下：<br>　　我们假设HTML文档中有这么一个标签：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">href</span>=<span class="string">"http://www.example.com/harderk"</span>&gt;</span>test111<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></a></a></p>
-<p>采用如图所示的操作<br><img src="/images/2017-02-28-1.jpg"></p>
+<p>采用如图所示的操作<br><img src="/images/2017-02-28-1.jpg"><br><img src="/images/2017-02-28-1.jpg" alt=""></p>
 
       
     </div>
