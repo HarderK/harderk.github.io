@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="实习," />
+  <meta name="keywords" content="技术,Linux," />
 
 
 
@@ -87,16 +87,31 @@
 
 
 
-<meta name="description" content="前言从2016年10月31号入职到年前返校，我在美团实习了整整12周。如果用一句话来描述这次实习经历，用“睁眼看世界”来形容那是再贴切不过了。回想自己从刚进公司时拿着Mac不知如何找文件，到现在对大公司的前端开发流程有了比较全面的认知、知识面得到拓展、实践能力也提高些许，不得不说这三个月的收获超过预期，这里真的是要感谢美团、远哥、琪哥还有团队的小伙伴们。有所得当然也有所失，学校的一切我都短暂的失去">
+<meta name="description" content="ls: 显示目录文件
+-a 显示所有文件，包括隐藏文件
+-l 详细信息显示
+-d 查看目录属性
+cd: 切换目录
+pwd：显示当前所在工作目录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="美团实习总结">
-<meta property="og:url" content="http://harderk.github.io/2017/02/21/2017-02-21-美团实习总结/index.html">
+<meta property="og:title" content="常用Linux命令">
+<meta property="og:url" content="http://harderk.github.io/2017/03/03/常用Linux命令/index.html">
 <meta property="og:site_name" content="HarderK的雜貨店">
-<meta property="og:description" content="前言从2016年10月31号入职到年前返校，我在美团实习了整整12周。如果用一句话来描述这次实习经历，用“睁眼看世界”来形容那是再贴切不过了。回想自己从刚进公司时拿着Mac不知如何找文件，到现在对大公司的前端开发流程有了比较全面的认知、知识面得到拓展、实践能力也提高些许，不得不说这三个月的收获超过预期，这里真的是要感谢美团、远哥、琪哥还有团队的小伙伴们。有所得当然也有所失，学校的一切我都短暂的失去">
-<meta property="og:updated_time" content="2017-02-22T01:33:28.807Z">
+<meta property="og:description" content="ls: 显示目录文件
+-a 显示所有文件，包括隐藏文件
+-l 详细信息显示
+-d 查看目录属性
+cd: 切换目录
+pwd：显示当前所在工作目录">
+<meta property="og:updated_time" content="2017-03-03T12:12:03.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="美团实习总结">
-<meta name="twitter:description" content="前言从2016年10月31号入职到年前返校，我在美团实习了整整12周。如果用一句话来描述这次实习经历，用“睁眼看世界”来形容那是再贴切不过了。回想自己从刚进公司时拿着Mac不知如何找文件，到现在对大公司的前端开发流程有了比较全面的认知、知识面得到拓展、实践能力也提高些许，不得不说这三个月的收获超过预期，这里真的是要感谢美团、远哥、琪哥还有团队的小伙伴们。有所得当然也有所失，学校的一切我都短暂的失去">
+<meta name="twitter:title" content="常用Linux命令">
+<meta name="twitter:description" content="ls: 显示目录文件
+-a 显示所有文件，包括隐藏文件
+-l 详细信息显示
+-d 查看目录属性
+cd: 切换目录
+pwd：显示当前所在工作目录">
 
 
 
@@ -124,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://harderk.github.io/2017/02/21/2017-02-21-美团实习总结/"/>
+  <link rel="canonical" href="http://harderk.github.io/2017/03/03/常用Linux命令/"/>
 
 
 
 
 
-  <title> 美团实习总结 | HarderK的雜貨店 </title>
+  <title> 常用Linux命令 | HarderK的雜貨店 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +284,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://harderk.github.io/2017/02/21/2017-02-21-美团实习总结/">
+  <link itemprop="mainEntityOfPage" href="http://harderk.github.io/2017/03/03/常用Linux命令/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="HarderK">
@@ -293,7 +308,7 @@
             
             
               
-                美团实习总结
+                常用Linux命令
               
             
           </h1>
@@ -308,8 +323,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-21T18:52:35+08:00">
-                2017-02-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-03T20:10:37+08:00">
+                2017-03-03
               </time>
             
 
@@ -331,8 +346,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/有关工作/" itemprop="url" rel="index">
-                    <span itemprop="name">有关工作</span>
+                  <a href="/categories/有关技术/" itemprop="url" rel="index">
+                    <span itemprop="name">有关技术</span>
                   </a>
                 </span>
 
@@ -349,8 +364,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/21/2017-02-21-美团实习总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/21/2017-02-21-美团实习总结/" itemprop="commentCount"></span>
+                <a href="/2017/03/03/常用Linux命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/03/常用Linux命令/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -358,7 +373,7 @@
 
           
           
-             <span id="/2017/02/21/2017-02-21-美团实习总结/" class="leancloud_visitors" data-flag-title="美团实习总结">
+             <span id="/2017/03/03/常用Linux命令/" class="leancloud_visitors" data-flag-title="常用Linux命令">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,29 +402,58 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>从2016年10月31号入职到年前返校，我在美团实习了整整12周。如果用一句话来描述这次实习经历，用“睁眼看世界”来形容那是再贴切不过了。回想自己从刚进公司时拿着Mac不知如何找文件，到现在对大公司的前端开发流程有了比较全面的认知、知识面得到拓展、实践能力也提高些许，不得不说这三个月的收获超过预期，这里真的是要感谢美团、远哥、琪哥还有团队的小伙伴们。<br>有所得当然也有所失，学校的一切我都短暂的失去了，出来实习之前对实习有这强烈的心理需求，在实习的过程中，不断成长，不断调节心理预期，回学校的心理需求却是不断增强。<br>因此，我有必要好好总结过去这三个月的得与失，回首过去，计划将来。我将从工作、学习、生活、思想四个方面进行总结，从而决定未来这一学期的计划。</p>
+        <p>ls: 显示目录文件</p>
+<pre><code>-a 显示所有文件，包括隐藏文件
+-l 详细信息显示
+-d 查看目录属性
+</code></pre><p>cd: 切换目录</p>
+<p>pwd：显示当前所在工作目录</p>
 <a id="more"></a>
-<h2 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h2><p>三个月的工作做的东西倒不是很多，但是涉及到的知识面却比较广泛。此次工作虽然和自己想象中的不一样，但是却有别样的滋味。</p>
-<ol>
-<li>最开始的两周是一个熟悉脚手架和开发流程的过程，尔后开始慢慢的接触红包业务，从一点点小的修改开始，慢慢熟悉node层，服务器端渲染，前端渲染。一步步的积累经验之后，开始自己做一个新需求，比如红包项目中的集点活动。从中我也尽量避免使用UI框架，给自己创造机会多手写CSS。比较闲的时候也会自己尝试写一点小东西，比如日期格式化函数、React联动选择的组件。利用React完成了一个新需求（广告投放管理）算是一件比较高兴的事情，实习期间花了比较多的时间来看React全家桶，虽然没有找到机会应用Redux，但是能用实践React已经感到很高兴了。</li>
-<li>在学校时，臆想的前端开发应该从切图开始，到交互到逻辑处理，从css到js都要一手抓，但是在我们团队，大家似乎都比较重视js、node这一块的内容，css的编写较少。我一直感觉真正细究css，那花的时间比写逻辑花的时间都会多，所以侧重js逻辑这块倒是出乎意料的对我胃口。</li>
-<li>写前端比较好的一点是，你做的东西你立刻就可以看到成果，你可以看到可视化的界面，当你看到你代码一点点的累积，你的作品一点点的呈现在你的面前，你可以感受到你的付出。我最初开始写PHP，做各种逻辑处理，但是没有一个合适的界面可以量化你的成果，会让人怀疑我到底做了多少工作，我做的工作到底有没有用。包括你做出的东西给别人看，别人看到的就是你这个作品巨丑，完全不会关注你做这个东西背后的逻辑。相信很多写后端的人被别人评价过，能不能把界面再做好看一点（这番话对后端来说真是巨大的打击）。</li>
-<li>不知道是我个人的问题还是本是如此，在熟悉团队的开发流程之后，不断重复又重复的写代码竟然让我觉得有一点无趣，如果不应用新的技术栈，实在是没有继续写代码的动力。</li>
-</ol>
-<h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><p>工作也是一个学习的过程，但是工作之余的学习更为重要。工作日的学习时间比较零碎，如何利用周末时间很关键。</p>
-<ol>
-<li>时间。最开始的一个月是“睁眼看世界”的一个月，node、ES6、模块化、打包工具、Express、KOA以及各种前端MV*框架，各种技术让我仿佛发现了新大陆一般，直接把我从旧时代带到了新世界。发现新大陆那也只是发现而已，重要的还是如何吸收这些知识。所以最开始的一个月，周末的时间几乎都在家学习这些新知识。但是到越到后面就越感觉到累，周末花的时间也越来越少。</li>
-<li>效率。在公司的学习效率低，毕竟是工作时间，自己学习毕竟不好；周末学习效率也不高，学习氛围直接影响学习效率。</li>
-<li>计划。计划真的很重要、很重要、很重要。前一天睡觉之前，用软件计划一下明天该做的事情，状态不好的时候可以利用番茄时间来学习。</li>
-<li>输出。这也是实习的一大收获，以前在学习新知识的时候，仅仅只有输入而没有输出，学了不用也不思考，一段时间就会忘记。因此，在今后的学习中，有应用场景一定要应用一番，找不到应用场景也应该做个总结，可以是做一个分享，也可以是写一篇博客。</li>
-</ol>
-<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><p>来北京的时候就有同学对我说，“来北京干什么，留在学校多好！”，三个月过去了，以后我也会将这句话送给其他人。对自己，我只想说一句话：“好好珍惜在学校的时光！”</p>
-<h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>实习后的思想真的过于反转和揪心。从开始坚定的走技术这条路，到想继续求学，到认清现实，继续走前端这条路，一步步都是一个彻彻底底的否定以前的大转变。<br>回想自己读研究生的初心是那么的简单，就是好好做技术，然后进BAT。但是处在不同的阶段，追求就不一样了。出来实习后，对工作和上班后的生活也有了初体验，由此，对于职业选择，想法也出现了几次转变。第一次思想的转变出现在实习两个月后，那时只觉得前端的格局太小，这种生活也不是自己想要的，因此，一度近乎决定回学校去做数据分析和数据挖掘方向（刚进学校没有选这个方向就是因为已经学了一段时间的前端，舍不得放下），最后，在和其他同学聊了一番之后才决定再坚持一下，也许我会看到不同的东西；第二次思想转变是实习快三个月的时候，这次只是觉得我比较喜欢学校图书馆的这种环境，因此可以考虑一下回去读个博，但太多的客观条件不允许，这个想法也只能是想想罢了；最后一次思想的转变是在回学校之后，想了很多，也想的很远：的确，学校的生活是我想要的，但是现实是现阶段前端才是最适合我的方向，先找一个大的平台去见识更多的东西，也许我会看到感兴趣的东西，工作一两年后，而如果那时我还是觉得想留在学校，那么就辞职踏踏实实的考个博或者去国外读个双硕士。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总而言之，此次实习，也许会成为我研究生阶段最重要的一段经历，此次对工作、生活和学习有的感悟已经直接影响到了我对未来的决策。同时，我也了解了自己的能力，坚定了走前端的信念，对下一阶段的学习也有了明确的目标。<br>实习的收获很大，但我最终还是决定离开。<br>当下，我更明白我需要的是什么，如果象牙塔是我最后的天堂，那么就让我在天堂里慢慢的走出来。</p>
-<blockquote>
-<p><em>初稿记于 2017年1月21日</em><br><em>终稿于2017年2月10日</em></p>
-</blockquote>
+<p>touch： 创建空文件</p>
+<p>mkdir： 创建新目录</p>
+<p>cp：复制文件或目录</p>
+<pre><code>-R 复制目录
+$ cp file1 file2 dir1 : 将文件file1、file2复制到目录dir1
+$ cp -R dir1 dir2 : 将dir1下所有文件及子目录复制到dir2
+</code></pre><p>mv: 移动文件，更改名字</p>
+<pre><code>$ mv file1 file3 : 将当期目录下文件file1更名为file3
+$ mv file2 dir2 : 将文件file2移动到目录dir2下
+</code></pre><p>rm: 删除文件或目录</p>
+<pre><code>-i 删除前逐一确认
+-f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。
+-r  将目录及目录中的目录和文件亦逐一删除。
 
+$ rm file3 : 删除文件file3
+$ rm -r dir1 : 删除目录dir1
+</code></pre><p>cat: 显示文件内容</p>
+<p>more: 分页显示文件内容</p>
+<p>tail: 查看文件的后几行</p>
+<pre><code>-num 后num行
+-f 动态显示文件内容
+</code></pre><p>ln: 创建硬、软连接</p>
+<pre><code>$ ln -s /etc/issue /issue.soft : 创建文件/etc/issue的软链接/issue.soft
+$ ln /etc/issue /issue.hard : 创建文件的硬链接
+</code></pre><p>which: 显示系统命令所在目录</p>
+<p>find: 查找文件或目录</p>
+<pre><code>$ find /etc -name init : 在目录/etc中查找文件init
+$ find / -size  204800 ：在根目录下查找大于100MB的文件
+$ find / -user sam : 在根目录下查找所有者为sam的文件
+$ find /etc -name inittab -exec ls -l {} : 在/etc下查找inittab 文件并显示器详细信息
+</code></pre><p>locate: 寻找文件或目录</p>
+<pre><code>$ locate file : 列出所有跟file相关的文件
+</code></pre><p>grep: 在文件中搜索字符串匹配的行并输出</p>
+<pre><code>grep [指定字符串] [源文件]
+</code></pre><p>man: 获得帮助信息</p>
+<pre><code>man [命令或配置文件]
+$ man ls : 查看ls命令的帮助信息
+$ man services ： 查看配置文件services的帮助信息
+</code></pre><p>info： 获得帮助信息</p>
+<pre><code>info [任何关键字]
+$ info ls : 查看ls指令的帮助信息
+</code></pre><p>命令别名定义：</p>
+<pre><code>alias copy=cp
+unalias copy : 删除别名
+</code></pre>
       
     </div>
 
@@ -432,7 +476,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/实习/" rel="tag"># 实习</a>
+            <a href="/tags/技术/" rel="tag"># 技术</a>
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
         </div>
       
@@ -445,15 +491,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/01/如何让遮罩层在窗口大小改变的情况下保持充满视口？/" rel="next" title="如何让遮罩层在窗口大小改变的情况下保持充满视口？">
+                <i class="fa fa-chevron-left"></i> 如何让遮罩层在窗口大小改变的情况下保持充满视口？
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/23/2017-02-23-研究生做前端怎么了/" rel="prev" title="做前端为什么要读研?">
-                做前端为什么要读研? <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -468,10 +514,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/21/2017-02-21-美团实习总结/"
-     data-title="美团实习总结"
+        <div class="ds-share flat" data-thread-key="2017/03/03/常用Linux命令/"
+     data-title="常用Linux命令"
      data-content=""
-     data-url="http://harderk.github.io/2017/02/21/2017-02-21-美团实习总结/">
+     data-url="http://harderk.github.io/2017/03/03/常用Linux命令/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -498,8 +544,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/21/2017-02-21-美团实习总结/"
-           data-title="美团实习总结" data-url="http://harderk.github.io/2017/02/21/2017-02-21-美团实习总结/">
+      <div class="ds-thread" data-thread-key="2017/03/03/常用Linux命令/"
+           data-title="常用Linux命令" data-url="http://harderk.github.io/2017/03/03/常用Linux命令/">
       </div>
     
   </div>
@@ -523,17 +569,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/profile.jpg"
@@ -620,22 +657,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作"><span class="nav-number">2.</span> <span class="nav-text">工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习"><span class="nav-number">3.</span> <span class="nav-text">学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生活"><span class="nav-number">4.</span> <span class="nav-text">生活</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思想"><span class="nav-number">5.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
