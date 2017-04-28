@@ -87,18 +87,19 @@
 
 
 
-<meta name="description" content="我们给定了一个URL字符串，比如: http://www.example.com/harderk/， 我们如何将这个URL中host和pathname解析出来呢？　　聪明的你可能会说，这还不容易，我用正则，做字符串匹配，将想要的部分匹配出来不就行了。对，这方法没毛病，但是有没有更简单的、不用对字符串进行各种操作的方法呢？">
+<meta name="description" content="第三部分是ES6的模块化方案，同时会介绍一下CommonJS规范以及AMD。
+1. CommonJS模块规范模块的意义在于将方法和变量限定在私有的作用域中，同时支持引入和导出功能。CommonJS对模块的定义分为3个部分：模块引用、模块定义、模块标识。Node只是实现了其中的一部分。在Node中使用，模块的引入都是同步的，因为服务器端的模块引入都是从磁盘中加载，速度快，对性能的影响不大，瓶颈在于C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用非操作字符串方法将给定url中的host和pathname解析出来">
-<meta property="og:url" content="http://harderk.github.io/2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/index.html">
+<meta property="og:title" content="ES6总结（3）">
+<meta property="og:url" content="http://harderk.github.io/2017/04/28/ES6总结（3）/index.html">
 <meta property="og:site_name" content="HarderK的雜貨店">
-<meta property="og:description" content="我们给定了一个URL字符串，比如: http://www.example.com/harderk/， 我们如何将这个URL中host和pathname解析出来呢？　　聪明的你可能会说，这还不容易，我用正则，做字符串匹配，将想要的部分匹配出来不就行了。对，这方法没毛病，但是有没有更简单的、不用对字符串进行各种操作的方法呢？">
-<meta property="og:image" content="http://harderk.github.io/images/2017-2-28-1.jpg">
-<meta property="og:updated_time" content="2017-03-01T04:33:20.000Z">
+<meta property="og:description" content="第三部分是ES6的模块化方案，同时会介绍一下CommonJS规范以及AMD。
+1. CommonJS模块规范模块的意义在于将方法和变量限定在私有的作用域中，同时支持引入和导出功能。CommonJS对模块的定义分为3个部分：模块引用、模块定义、模块标识。Node只是实现了其中的一部分。在Node中使用，模块的引入都是同步的，因为服务器端的模块引入都是从磁盘中加载，速度快，对性能的影响不大，瓶颈在于C">
+<meta property="og:updated_time" content="2017-04-28T02:55:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用非操作字符串方法将给定url中的host和pathname解析出来">
-<meta name="twitter:description" content="我们给定了一个URL字符串，比如: http://www.example.com/harderk/， 我们如何将这个URL中host和pathname解析出来呢？　　聪明的你可能会说，这还不容易，我用正则，做字符串匹配，将想要的部分匹配出来不就行了。对，这方法没毛病，但是有没有更简单的、不用对字符串进行各种操作的方法呢？">
-<meta name="twitter:image" content="http://harderk.github.io/images/2017-2-28-1.jpg">
+<meta name="twitter:title" content="ES6总结（3）">
+<meta name="twitter:description" content="第三部分是ES6的模块化方案，同时会介绍一下CommonJS规范以及AMD。
+1. CommonJS模块规范模块的意义在于将方法和变量限定在私有的作用域中，同时支持引入和导出功能。CommonJS对模块的定义分为3个部分：模块引用、模块定义、模块标识。Node只是实现了其中的一部分。在Node中使用，模块的引入都是同步的，因为服务器端的模块引入都是从磁盘中加载，速度快，对性能的影响不大，瓶颈在于C">
 
 
 
@@ -126,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://harderk.github.io/2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/"/>
+  <link rel="canonical" href="http://harderk.github.io/2017/04/28/ES6总结（3）/"/>
 
 
 
 
 
-  <title> 使用非操作字符串方法将给定url中的host和pathname解析出来 | HarderK的雜貨店 </title>
+  <title> ES6总结（3） | HarderK的雜貨店 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -271,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://harderk.github.io/2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/">
+  <link itemprop="mainEntityOfPage" href="http://harderk.github.io/2017/04/28/ES6总结（3）/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="HarderK">
@@ -295,7 +296,7 @@
             
             
               
-                使用非操作字符串方法将给定url中的host和pathname解析出来
+                ES6总结（3）
               
             
           </h1>
@@ -310,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-28T21:50:52+08:00">
-                2017-02-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-28T10:55:06+08:00">
+                2017-04-28
               </time>
             
 
@@ -351,8 +352,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/" itemprop="commentCount"></span>
+                <a href="/2017/04/28/ES6总结（3）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/28/ES6总结（3）/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -360,7 +361,7 @@
 
           
           
-             <span id="/2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/" class="leancloud_visitors" data-flag-title="使用非操作字符串方法将给定url中的host和pathname解析出来">
+             <span id="/2017/04/28/ES6总结（3）/" class="leancloud_visitors" data-flag-title="ES6总结（3）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,13 +390,20 @@
       
 
       
-        <p>　　我们给定了一个URL字符串，比如: <code>http://www.example.com/harderk/</code>， 我们如何将这个URL中host和pathname解析出来呢？<br>　　聪明的你可能会说，这还不容易，我用正则，做字符串匹配，将想要的部分匹配出来不就行了。对，这方法没毛病，但是有没有更简单的、不用对字符串进行各种操作的方法呢？</p>
-<a id="more"></a>
-<p>　　答案是有的,下面我们直接看代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> getLocation = <span class="function"><span class="params">href</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> aElement = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</div><div class="line">    aElement.href = href;</div><div class="line">    <span class="keyword">return</span> aElement;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">let</span> aElement = getLocation(<span class="string">"http://www.example.com/harderk"</span>);</div><div class="line"><span class="built_in">console</span>.log(aElement.pathname); <span class="comment">// "/harderk"</span></div><div class="line"><span class="built_in">console</span>.log(aElement.host); <span class="comment">// "www.example.com"</span></div><div class="line"><span class="built_in">console</span>.log(aElement.href); <span class="comment">// "http://www.example.com/harderk"</span></div></pre></td></tr></table></figure>
-<p>　　上面方法的核心是&lt;a&gt;标签，通过node节点获得一个HTMLElement对象，从这个对象的属性我们直接获得我们想要的结果。那么&lt;a&gt;节点到底是何方神圣呢？我们来看一下：<br>　　我们假设HTML文档中有这么一个标签：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">href</span>=<span class="string">"http://www.example.com/harderk"</span>&gt;</span>test111<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>　　采用如图所示的操作<br><img src="/images/2017-2-28-1.jpg"></p>
-<p>　　我们看到其实我们通过&lt;a&gt;节点得到的是一个HTMLAnchorElement对象，所有的原因都是这个HTMLAnchorElement对象，通过这个对象我们可以得到我们想要得到的URL各个部分属性的值,href、hash、host、hostname、pathname都在其中。感兴趣的话大家可以在<strong><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement" target="_blank" rel="external">MDN</a></strong>看一下这个对象都有哪些属性。</p>
+        <p>第三部分是ES6的模块化方案，同时会介绍一下CommonJS规范以及AMD。</p>
+<h2 id="1-CommonJS模块规范"><a href="#1-CommonJS模块规范" class="headerlink" title="1. CommonJS模块规范"></a>1. CommonJS模块规范</h2><p>模块的意义在于将方法和变量限定在私有的作用域中，同时支持引入和导出功能。<br>CommonJS对模块的定义分为3个部分：模块引用、模块定义、模块标识。Node只是实现了其中的一部分。在Node中使用，模块的引入都是同步的，因为服务器端的模块引入都是从磁盘中加载，速度快，对性能的影响不大，瓶颈在于CPU和内存。<br><a id="more"></a></p>
+<ul>
+<li>模块引用： 使用require()引入一个模块</li>
+<li>模块定义：在Node中，一个文件就是一个模块，将方法挂载在exports对象上就可以导出方法。</li>
+<li>模块标识：就是如何标识模块，是通过路径还是通过名称等。</li>
+</ul>
+<h2 id="2-AMD"><a href="#2-AMD" class="headerlink" title="2. AMD"></a>2. AMD</h2><p>由于前端加载资源需要进行网络请求，所以，同步的模块加载对性能影响很大，因此就出现了AMD（异步模块定义），AMD是CommonJS模块规范的一个延伸。<br>AMD的模块需要显示的通过define来进行定义<code>define(id?, dependencies?, callback)</code>, 模块的引入还是通过<code>require([module], callback)</code>方法引入。</p>
+<h2 id="3-ES6-Module"><a href="#3-ES6-Module" class="headerlink" title="3. ES6 Module"></a>3. ES6 Module</h2><p>ES6中一个文件就是一个独立的模块，模块功能主要有两个命令构成： import 和 export，import用于引入其他模块的内容（函数、对象、基本值），export制定模块对外输出的内容。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义模块输出</span></div><div class="line"></div><div class="line"><span class="comment">// profile.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> name = <span class="string">'HarderK'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> age = <span class="number">24</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> hobby = <span class="string">'basketball'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="comment">// profile.js</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'HarderK'</span>;</div><div class="line"><span class="keyword">var</span> age = <span class="number">24</span>;</div><div class="line"><span class="keyword">var</span> hobby = <span class="string">'basketball'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'hello world'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> &#123;name, age, bobby，sayHello&#125;;</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引入模块功能</span></div><div class="line"></div><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">import</span> &#123;name, age, hobby&#125; <span class="keyword">from</span> <span class="string">'./profile'</span>; <span class="comment">// .js后缀可以省略</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myname = name;</div></pre></td></tr></table></figure>
+<p>在上面的引入模块代码中，指定了加载3个输出值，sayHello没有加载，如果要整体加载可以如下使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> whole <span class="keyword">from</span> <span class="string">'./profile'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="built_in">module</span> whole <span class="keyword">from</span> <span class="string">'./profile'</span>;      <span class="comment">// 使用module命令</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>export default命令指定默认输出<br>一个模块只能有一个默认输入，export 和 export default 可以同时存在，但是二者输出的内容的引入方式不同,直接看下面代码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// a.js</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'test'</span>;</div><div class="line"><span class="keyword">var</span> age = <span class="number">18</span>;</div><div class="line"><span class="keyword">var</span> job = <span class="string">'Student'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> &#123;name, age, job&#125;;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> name;</div><div class="line"></div><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">import</span> anyName <span class="keyword">from</span> <span class="string">'./a'</span>;  <span class="comment">// 引入的是default制定的值</span></div><div class="line"><span class="keyword">import</span> &#123;name, age&#125; <span class="keyword">from</span> <span class="string">'./a'</span>;  <span class="comment">//引入的是export部分指定的内容，且按需加载</span></div></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -434,8 +442,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/23/做前端为什么要读研/" rel="next" title="做前端为什么要读研?">
-                <i class="fa fa-chevron-left"></i> 做前端为什么要读研?
+              <a href="/2017/04/25/ES6总结（2）/" rel="next" title="ES6总结（2）">
+                <i class="fa fa-chevron-left"></i> ES6总结（2）
               </a>
             
           </div>
@@ -443,10 +451,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/01/如何让遮罩层在窗口大小改变的情况下保持充满视口/" rel="prev" title="如何让遮罩层在窗口大小改变的情况下保持充满视口？">
-                如何让遮罩层在窗口大小改变的情况下保持充满视口？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -461,10 +465,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/"
-     data-title="使用非操作字符串方法将给定url中的host和pathname解析出来"
+        <div class="ds-share flat" data-thread-key="2017/04/28/ES6总结（3）/"
+     data-title="ES6总结（3）"
      data-content=""
-     data-url="http://harderk.github.io/2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/">
+     data-url="http://harderk.github.io/2017/04/28/ES6总结（3）/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -491,8 +495,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/"
-           data-title="使用非操作字符串方法将给定url中的host和pathname解析出来" data-url="http://harderk.github.io/2017/02/28/使用非操作字符串方法将给定url中的host和pathname解析出来/">
+      <div class="ds-thread" data-thread-key="2017/04/28/ES6总结（3）/"
+           data-title="ES6总结（3）" data-url="http://harderk.github.io/2017/04/28/ES6总结（3）/">
       </div>
     
   </div>
@@ -516,8 +520,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/profile.jpg"
@@ -604,6 +617,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-CommonJS模块规范"><span class="nav-number">1.</span> <span class="nav-text">1. CommonJS模块规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-AMD"><span class="nav-number">2.</span> <span class="nav-text">2. AMD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-ES6-Module"><span class="nav-number">3.</span> <span class="nav-text">3. ES6 Module</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
