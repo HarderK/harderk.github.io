@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端,技术," />
+  <meta name="keywords" content="前端,技术,设计模式," />
 
 
 
@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="第三部分是ES6的模块化方案，同时会介绍一下CommonJS规范以及AMD。
-1. CommonJS模块规范模块的意义在于将方法和变量限定在私有的作用域中，同时支持引入和导出功能。CommonJS对模块的定义分为3个部分：模块引用、模块定义、模块标识。Node只是实现了其中的一部分。在Node中使用，模块的引入都是同步的，因为服务器端的模块引入都是从磁盘中加载，速度快，对性能的影响不大，瓶颈在于C">
+<meta name="description" content="拿年终奖的计算来举例：年终奖和两个因素有关，一个是基本工资，一个是绩效。首先写出一个计算年终奖的函数：
+1234567891011var caculateBonus = function(performance, salary) &amp;#123;    if(performance === &apos;S&apos;) &amp;#123;        return salary + salary * 30 / 100 * 4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6总结（3）">
-<meta property="og:url" content="http://harderk.github.io/2017/04/28/ES6总结（3）/index.html">
+<meta property="og:title" content="JavaScript设计模式之策略模式">
+<meta property="og:url" content="http://harderk.github.io/2017/05/13/JavaScript设计模式之策略模式/index.html">
 <meta property="og:site_name" content="HarderK的雜貨店">
-<meta property="og:description" content="第三部分是ES6的模块化方案，同时会介绍一下CommonJS规范以及AMD。
-1. CommonJS模块规范模块的意义在于将方法和变量限定在私有的作用域中，同时支持引入和导出功能。CommonJS对模块的定义分为3个部分：模块引用、模块定义、模块标识。Node只是实现了其中的一部分。在Node中使用，模块的引入都是同步的，因为服务器端的模块引入都是从磁盘中加载，速度快，对性能的影响不大，瓶颈在于C">
-<meta property="og:updated_time" content="2017-04-28T03:01:18.000Z">
+<meta property="og:description" content="拿年终奖的计算来举例：年终奖和两个因素有关，一个是基本工资，一个是绩效。首先写出一个计算年终奖的函数：
+1234567891011var caculateBonus = function(performance, salary) &amp;#123;    if(performance === &apos;S&apos;) &amp;#123;        return salary + salary * 30 / 100 * 4">
+<meta property="og:updated_time" content="2017-05-13T11:56:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6总结（3）">
-<meta name="twitter:description" content="第三部分是ES6的模块化方案，同时会介绍一下CommonJS规范以及AMD。
-1. CommonJS模块规范模块的意义在于将方法和变量限定在私有的作用域中，同时支持引入和导出功能。CommonJS对模块的定义分为3个部分：模块引用、模块定义、模块标识。Node只是实现了其中的一部分。在Node中使用，模块的引入都是同步的，因为服务器端的模块引入都是从磁盘中加载，速度快，对性能的影响不大，瓶颈在于C">
+<meta name="twitter:title" content="JavaScript设计模式之策略模式">
+<meta name="twitter:description" content="拿年终奖的计算来举例：年终奖和两个因素有关，一个是基本工资，一个是绩效。首先写出一个计算年终奖的函数：
+1234567891011var caculateBonus = function(performance, salary) &amp;#123;    if(performance === &apos;S&apos;) &amp;#123;        return salary + salary * 30 / 100 * 4">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://harderk.github.io/2017/04/28/ES6总结（3）/"/>
+  <link rel="canonical" href="http://harderk.github.io/2017/05/13/JavaScript设计模式之策略模式/"/>
 
 
 
 
 
-  <title> ES6总结（3） | HarderK的雜貨店 </title>
+  <title> JavaScript设计模式之策略模式 | HarderK的雜貨店 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -272,7 +272,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://harderk.github.io/2017/04/28/ES6总结（3）/">
+  <link itemprop="mainEntityOfPage" href="http://harderk.github.io/2017/05/13/JavaScript设计模式之策略模式/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="HarderK">
@@ -296,7 +296,7 @@
             
             
               
-                ES6总结（3）
+                JavaScript设计模式之策略模式
               
             
           </h1>
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-28T10:55:06+08:00">
-                2017-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-13T19:50:06+08:00">
+                2017-05-13
               </time>
             
 
@@ -352,8 +352,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/28/ES6总结（3）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/28/ES6总结（3）/" itemprop="commentCount"></span>
+                <a href="/2017/05/13/JavaScript设计模式之策略模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/13/JavaScript设计模式之策略模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -361,7 +361,7 @@
 
           
           
-             <span id="/2017/04/28/ES6总结（3）/" class="leancloud_visitors" data-flag-title="ES6总结（3）">
+             <span id="/2017/05/13/JavaScript设计模式之策略模式/" class="leancloud_visitors" data-flag-title="JavaScript设计模式之策略模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,22 +390,14 @@
       
 
       
-        <p>第三部分是ES6的模块化方案，同时会介绍一下CommonJS规范以及AMD。</p>
-<h2 id="1-CommonJS模块规范"><a href="#1-CommonJS模块规范" class="headerlink" title="1. CommonJS模块规范"></a>1. CommonJS模块规范</h2><p>模块的意义在于将方法和变量限定在私有的作用域中，同时支持引入和导出功能。<br>CommonJS对模块的定义分为3个部分：模块引用、模块定义、模块标识。Node只是实现了其中的一部分。在Node中使用，模块的引入都是同步的，因为服务器端的模块引入都是从磁盘中加载，速度快，对性能的影响不大，瓶颈在于CPU和内存。<br><a id="more"></a></p>
-<ul>
-<li>模块引用： 使用require()引入一个模块</li>
-<li>模块定义：在Node中，一个文件就是一个模块，将方法挂载在exports对象上就可以导出方法。</li>
-<li>模块标识：就是如何标识模块，是通过路径还是通过名称等。</li>
-</ul>
-<h2 id="2-AMD"><a href="#2-AMD" class="headerlink" title="2. AMD"></a>2. AMD</h2><p>由于前端加载资源需要进行网络请求，所以，同步的模块加载对性能影响很大，因此就出现了AMD（异步模块定义），AMD是CommonJS模块规范的一个延伸。<br>AMD的模块需要显示的通过define来进行定义<code>define(id?, dependencies?, callback)</code>, 模块的引入还是通过<code>require([module], callback)</code>方法引入。</p>
-<h2 id="3-ES6-Module"><a href="#3-ES6-Module" class="headerlink" title="3. ES6 Module"></a>3. ES6 Module</h2><p>ES6中一个文件就是一个独立的模块，模块功能主要有两个命令构成： import 和 export，import用于引入其他模块的内容（函数、对象、基本值），export制定模块对外输出的内容。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义模块输出</span></div><div class="line"></div><div class="line"><span class="comment">// profile.js</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> name = <span class="string">'HarderK'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> age = <span class="number">24</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> hobby = <span class="string">'basketball'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="comment">// profile.js</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'HarderK'</span>;</div><div class="line"><span class="keyword">var</span> age = <span class="number">24</span>;</div><div class="line"><span class="keyword">var</span> hobby = <span class="string">'basketball'</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'hello world'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> &#123;name, age, bobby，sayHello&#125;;</div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 引入模块功能</span></div><div class="line"></div><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">import</span> &#123;name, age, hobby&#125; <span class="keyword">from</span> <span class="string">'./profile'</span>; <span class="comment">// .js后缀可以省略</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> myname = name;</div></pre></td></tr></table></figure>
-<p>在上面的引入模块代码中，指定了加载3个输出值，sayHello没有加载，如果要整体加载可以如下使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> whole <span class="keyword">from</span> <span class="string">'./profile'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="built_in">module</span> whole <span class="keyword">from</span> <span class="string">'./profile'</span>;      <span class="comment">// 使用module命令</span></div></pre></td></tr></table></figure></p>
-<ul>
-<li>export default命令指定默认输出<br>一个模块只能有一个默认输入，export 和 export default 可以同时存在，但是二者输出的内容的引入方式不同,直接看下面代码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// a.js</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'test'</span>;</div><div class="line"><span class="keyword">var</span> age = <span class="number">18</span>;</div><div class="line"><span class="keyword">var</span> job = <span class="string">'Student'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> &#123;name, age, job&#125;;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> name;</div><div class="line"></div><div class="line"><span class="comment">// main.js</span></div><div class="line"><span class="keyword">import</span> anyName <span class="keyword">from</span> <span class="string">'./a'</span>;  <span class="comment">// 引入的是default制定的值</span></div><div class="line"><span class="keyword">import</span> &#123;name, age&#125; <span class="keyword">from</span> <span class="string">'./a'</span>;  <span class="comment">//引入的是export部分指定的内容，且按需加载</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>  <em>这个部分由于个人应用有限，仅处于使用阶段，总结的比较简单，以后如果有深入的了解，再持续更新</em></p>
+        <p>拿年终奖的计算来举例：年终奖和两个因素有关，一个是基本工资，一个是绩效。首先写出一个计算年终奖的函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> caculateBonus = <span class="function"><span class="keyword">function</span>(<span class="params">performance, salary</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(performance === <span class="string">'S'</span>) &#123;</div><div class="line">        <span class="keyword">return</span> salary + salary * <span class="number">30</span> / <span class="number">100</span> * <span class="number">4</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(performance === <span class="string">'A'</span>) &#123;</div><div class="line">        <span class="keyword">return</span> salary + salary * <span class="number">30</span> / <span class="number">100</span> * <span class="number">3</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(performance === <span class="string">'B'</span>) &#123;</div><div class="line">        <span class="keyword">return</span> salary + salary * <span class="number">30</span> / <span class="number">100</span> * <span class="number">2</span>;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>最常想到的计算方式应该就是上面的方法，利用if判断语句去执行不同的策略。而这里要讲到的策略模式其实就是if判断语句的改善。考虑到计算年终奖的计算算法每年都可能变化，绩效等级要是加入C、D呢，我们就可以把计算规则提取出来，构造成一个策略对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> strategies = &#123;</div><div class="line">	<span class="string">"S"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> salary * <span class="number">4</span>;</div><div class="line">	&#125;,</div><div class="line">	<span class="string">"A"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> salary * <span class="number">3</span>;</div><div class="line">	&#125;,</div><div class="line">	<span class="string">"B"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> salary * <span class="number">2</span>;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> calculateBonus = <span class="function"><span class="keyword">function</span>(<span class="params">performance, salary</span>) </span>&#123;</div><div class="line">	<span class="keyword">return</span> strategies[performance](salary);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>从上面代码我们看出，无论计算规则怎么变，计算年终奖的部分都不会改变，我们只需要修改策略类即可，而且当其他地方需要用到这个策略类的时候，可以直接复用。</p>
+<p>策略模式特别适用于一组算法（计算规则）的选择，这组算法既可以复用，不用深入到代码深处去修改（<em>谁都知道，一段同样的代码要在多个地方进行修改而且含嵌套的很深特别难找的痛苦</em>）。比如缓动函数的选择，先构造一个缓动函数的策略类，然后将具体的运动规则委托给这个缓动函数执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 缓动算法</span></div><div class="line"><span class="comment">// t 为已消耗的时间</span></div><div class="line"><span class="comment">// b 为小球的原始位置</span></div><div class="line"><span class="comment">// c 为小球要移动的距离</span></div><div class="line"><span class="comment">// d 为动画持续的时间</span></div><div class="line"><span class="keyword">var</span> tween = &#123;</div><div class="line">	<span class="attr">linear</span>: <span class="function"><span class="keyword">function</span>(<span class="params">t, b, c, d</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> c*t/d + b;</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">easeIn</span>: <span class="function"><span class="keyword">function</span>(<span class="params">t, b, c, d</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> c*(t/=b)*t + b;</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">strongEaseIn</span>: <span class="function"><span class="keyword">function</span>(<span class="params">t, b, c, d</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> c * (t /= d) * t * t * t * t + b;</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">strongEaseOut</span>: <span class="function"><span class="keyword">function</span>(<span class="params">t, b, c, d</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> c * ((t = t / d - <span class="number">1</span>) * t * t * t * t + <span class="number">1</span>) + b;</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">strongEaseOut</span>: <span class="function"><span class="keyword">function</span>(<span class="params">t, b, c, d</span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> c * ((t / d - <span class="number">1</span>) * t * t + <span class="number">1</span>) + b;</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 定义Animate类，让元素运动起来</span></div><div class="line"><span class="keyword">var</span> Animate = <span class="function"><span class="keyword">function</span>(<span class="params">dom</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.dom = dom;</div><div class="line">	<span class="keyword">this</span>.startTime = <span class="number">0</span>;		<span class="comment">// 动画开始时间</span></div><div class="line">	<span class="keyword">this</span>.startPos = <span class="number">0</span>;		<span class="comment">// 元素初始位置</span></div><div class="line">	<span class="keyword">this</span>.endPos = <span class="number">0</span>;		<span class="comment">// 元素结束位置</span></div><div class="line">	<span class="keyword">this</span>.propertyName = <span class="string">''</span>;		<span class="comment">// 实现动画的元素属性</span></div><div class="line">	<span class="keyword">this</span>.easing = <span class="literal">null</span>;		<span class="comment">// 缓动算法</span></div><div class="line">	<span class="keyword">this</span>.duration = <span class="number">0</span>;		<span class="comment">// 动画持续的时间</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">Animate.prototype.start = <span class="function"><span class="keyword">function</span>(<span class="params">propertyName, endPos, duration, easing</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.startTime = <span class="built_in">Date</span>.now();		<span class="comment">// 初始化动画开始的时间</span></div><div class="line">	<span class="keyword">this</span>.startPos = <span class="keyword">this</span>.dom.getBoundingClientRect()[propertyName];</div><div class="line">	<span class="keyword">this</span>.propertyName = propertyName;</div><div class="line">	<span class="keyword">this</span>.endPos = endPos;</div><div class="line">	<span class="keyword">this</span>.duration = duration;</div><div class="line">	<span class="keyword">this</span>.easing = tween[easing];		<span class="comment">// 缓动算法</span></div><div class="line"></div><div class="line">	<span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">	<span class="keyword">var</span> timed = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="comment">// 执行每帧操作</span></div><div class="line">		<span class="keyword">if</span>(that.step() === <span class="literal">false</span>) &#123;		<span class="comment">// 动画已结束</span></div><div class="line">			clearInterval(timed);</div><div class="line">		&#125;</div><div class="line">	&#125;, <span class="number">19</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Animate.prototype.step = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> t = <span class="built_in">Date</span>.now();		<span class="comment">// 执行动画的当前时间</span></div><div class="line">	<span class="keyword">if</span>( t &gt;= <span class="keyword">this</span>.startTime + <span class="keyword">this</span>.duration) &#123;		<span class="comment">// 动画已结束</span></div><div class="line">		<span class="keyword">this</span>.update(<span class="keyword">this</span>.endPos);</div><div class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">var</span> pos = <span class="keyword">this</span>.easing(t - <span class="keyword">this</span>.startTime, <span class="keyword">this</span>.startPos, <span class="keyword">this</span>.endPos - <span class="keyword">this</span>.startPos, <span class="keyword">this</span>.duration);</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.update(pos);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Animate.prototype.update = <span class="function"><span class="keyword">function</span>(<span class="params">pos</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.dom.style[<span class="keyword">this</span>.propertyName] = pos + <span class="string">'px'</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -433,6 +425,8 @@
           
             <a href="/tags/技术/" rel="tag"># 技术</a>
           
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
         </div>
       
 
@@ -444,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/25/ES6总结（2）/" rel="next" title="ES6总结（2）">
-                <i class="fa fa-chevron-left"></i> ES6总结（2）
+              <a href="/2017/05/13/JavaScript设计模式之单例模式/" rel="next" title="JavaScript设计模式之单例模式">
+                <i class="fa fa-chevron-left"></i> JavaScript设计模式之单例模式
               </a>
             
           </div>
@@ -453,10 +447,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/13/JavaScript设计模式之单例模式/" rel="prev" title="JavaScript设计模式之单例模式">
-                JavaScript设计模式之单例模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -471,10 +461,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/04/28/ES6总结（3）/"
-     data-title="ES6总结（3）"
+        <div class="ds-share flat" data-thread-key="2017/05/13/JavaScript设计模式之策略模式/"
+     data-title="JavaScript设计模式之策略模式"
      data-content=""
-     data-url="http://harderk.github.io/2017/04/28/ES6总结（3）/">
+     data-url="http://harderk.github.io/2017/05/13/JavaScript设计模式之策略模式/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -501,8 +491,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/04/28/ES6总结（3）/"
-           data-title="ES6总结（3）" data-url="http://harderk.github.io/2017/04/28/ES6总结（3）/">
+      <div class="ds-thread" data-thread-key="2017/05/13/JavaScript设计模式之策略模式/"
+           data-title="JavaScript设计模式之策略模式" data-url="http://harderk.github.io/2017/05/13/JavaScript设计模式之策略模式/">
       </div>
     
   </div>
@@ -526,17 +516,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/profile.jpg"
@@ -623,22 +604,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-CommonJS模块规范"><span class="nav-number">1.</span> <span class="nav-text">1. CommonJS模块规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-AMD"><span class="nav-number">2.</span> <span class="nav-text">2. AMD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-ES6-Module"><span class="nav-number">3.</span> <span class="nav-text">3. ES6 Module</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
