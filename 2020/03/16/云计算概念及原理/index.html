@@ -1,0 +1,1073 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="云计算," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="如果想要从事云计算行业，一定要对云计算的基本内容有一定的了解。本文本着进行个人学习总结和科普的目的，将从云计算的内容、关键技术、产品以及其它辅助机制进行阐述。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="云计算概念及原理">
+<meta property="og:url" content="http://harderk.github.io/2020/03/16/云计算概念及原理/index.html">
+<meta property="og:site_name" content="HarderK的雜貨店">
+<meta property="og:description" content="如果想要从事云计算行业，一定要对云计算的基本内容有一定的了解。本文本着进行个人学习总结和科普的目的，将从云计算的内容、关键技术、产品以及其它辅助机制进行阐述。">
+<meta property="og:image" content="http://note.youdao.com/yws/res/4048/WEBRESOURCEf0e3c074509eb3e689a66545d5e80f0a">
+<meta property="og:image" content="http://note.youdao.com/yws/res/4125/WEBRESOURCE38f5df01be4ae3d98696a26fdbb64f83">
+<meta property="og:image" content="http://note.youdao.com/yws/res/4128/WEBRESOURCE638b644a29f3a64805804828b305b8cc">
+<meta property="og:image" content="http://note.youdao.com/yws/res/4264/WEBRESOURCEb765722df3e7bba3f3d18ce0a6ba384e">
+<meta property="og:updated_time" content="2020-03-16T11:15:09.157Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="云计算概念及原理">
+<meta name="twitter:description" content="如果想要从事云计算行业，一定要对云计算的基本内容有一定的了解。本文本着进行个人学习总结和科普的目的，将从云计算的内容、关键技术、产品以及其它辅助机制进行阐述。">
+<meta name="twitter:image" content="http://note.youdao.com/yws/res/4048/WEBRESOURCEf0e3c074509eb3e689a66545d5e80f0a">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://harderk.github.io/2020/03/16/云计算概念及原理/"/>
+
+
+
+
+
+  <title> 云计算概念及原理 | HarderK的雜貨店 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">HarderK的雜貨店</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">HarderK回归啦</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://harderk.github.io/2020/03/16/云计算概念及原理/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="HarderK">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/profile.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="HarderK的雜貨店">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="HarderK的雜貨店" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                云计算概念及原理
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T19:11:43+08:00">
+                2020-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/有关技术/" itemprop="url" rel="index">
+                    <span itemprop="name">有关技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/16/云计算概念及原理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2020/03/16/云计算概念及原理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/16/云计算概念及原理/" class="leancloud_visitors" data-flag-title="云计算概念及原理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>如果想要从事云计算行业，一定要对云计算的基本内容有一定的了解。本文本着进行个人学习总结和科普的目的，将从云计算的内容、关键技术、产品以及其它辅助机制进行阐述。</p>
+<a id="more"></a>
+<h1 id="一、云计算基本概念"><a href="#一、云计算基本概念" class="headerlink" title="一、云计算基本概念"></a>一、云计算基本概念</h1><h2 id="1、什么是云计算"><a href="#1、什么是云计算" class="headerlink" title="1、什么是云计算"></a>1、什么是云计算</h2><p>标准定义，NIST将云计算定义为：</p>
+<blockquote>
+<p>云计算是一种模型，可以实现随时随地、便捷地、按需从可配置计算资源共享池中获取所需的资源（例如，网络、服务器、存储、应用程序及服务），资源可以快速供给和释放，使管理的工作量和服务提供者的介入降至最低。</p>
+</blockquote>
+<p>个人通俗理解，分两方面。</p>
+<p>就行业来说，本质上是一种新的服务形式，是以业务和技术为中心的<strong>IT资源外包服务</strong>。</p>
+<p>就技术方面来说，是<strong>使用分布式、集群和虚拟化技术等技术来提供可扩展的IT资源</strong>。</p>
+<p>用国家电网的服务模式来描述云计算非常合适。</p>
+<p>当我们需要用电时，我们不需要购买发电机，而是直接使用国家电网等机构提供的用电服务，国家电网已经架构好输电设备，我们可以直接用电，然后根据使用量计费。</p>
+<p>当我们需要使用服务器等IT资源时，传统的模式是，自己购买服务器，自己维护，而云计算可以像使用电一样使得使用IT资源，我们只需要通过网络使用IT资源，然后根据使用了付费。下图左侧为用电服务与使用IT资源的类比关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">graph LR</div><div class="line">国家电网--&gt;|提供商|云服务提供商</div><div class="line">电路--&gt;|提供渠道|网络</div><div class="line">电--&gt;|服务|IT资源</div><div class="line">电按需使用--&gt;|使用方式|IT资源按需使用</div><div class="line">电按用量计费--&gt;|计费方式|套餐或按用量计费</div></pre></td></tr></table></figure>
+<h2 id="2、云计算的特性"><a href="#2、云计算的特性" class="headerlink" title="2、云计算的特性"></a>2、云计算的特性</h2><p>云计算这种提供IT资源服务的形式，需要满足一定的特性才能被认为是有效的云。对大多数云环境来说，<strong>按需使用</strong>、<strong>随处访问</strong>、<strong>多租户</strong>、<strong>弹性</strong>、<strong>可测量的使用</strong>、<strong>可恢复性</strong>六个特性比较常见。</p>
+<p><strong>按需使用</strong>。云用户可以访问基于云的IT资源（云资源池），然后自助使用IT资源，当你不再需要IT资源时可以退出使用。云用户对IT资源的配置可以自动化，不再需要云用户和云提供者的介入。</p>
+<p><strong>随处访问</strong>。是云服务可以被广泛访问的能力，用户的各种终端设备，如PC机、笔记本计算机、智能手机和移动终端设备，都可以作为云终端，随时随地访问“云”。这就需要云服务支持多种设备、传输协议、接口和安全技术。</p>
+<p><strong>多租户</strong>。一个软件程序的实例能够服务不同的用户，用户之间是互相隔离的，基于虚拟化技术，根据用户的需求动态分配及再分配IT资源。比如，一个云存储设备服务于多个用户。更多相关知识请自行百度<a href="https://baike.baidu.com/item/%E5%A4%9A%E7%A7%9F%E6%88%B7%E6%8A%80%E6%9C%AF/10061761?fr=aladdin" target="_blank" rel="external">多租户技术</a>。</p>
+<p><strong>弹性</strong>。弹性是一种能力，云根据运行时条件，或者云用户及云服务提供商的要求，自动透明地扩展IT资源。例如，企业在日常服务时，租用了少量的服务器，当面对业务高峰时，可以弹性扩展，增加多台服务器，高峰过后释放多余的服务器资源。</p>
+<p><strong>可测量使用</strong>。云平台具有记录用户使用IT资源情况的能力，云服务提供商根据资源使用情况进行收费，根据资源服务情况进行服务保障。</p>
+<p><strong>可恢复性</strong>。一般要求在多个物理位置冗余存放IT资源。当一个资源出现故障是，利用冗余的IT资源进行恢复。</p>
+<h2 id="3、云计算交付模型"><a href="#3、云计算交付模型" class="headerlink" title="3、云计算交付模型"></a>3、云计算交付模型</h2><p>云交付模型是与服务提供商提供的具体的、实现打包好的IT资源组合。常见云计算交付模型有三种：</p>
+<ul>
+<li>基础设施作为服务（IaaS）</li>
+<li>平台作为服务（PaaS）</li>
+<li>软件作为服务（SaaS）</li>
+</ul>
+<p><strong>IaaS</strong>。IaaS交付的IT资源，是以基础设施为中心的IT资源组成，包括硬件、网络、连通性、操作系统及其他的原始的IT资源。IaaS中，IT资源是虚拟化的并打包成包。</p>
+<p>一种典型的IaaS环境中的核心和主要IT资源就是虚拟服务器。虚拟服务器的租用是通过制定服务器的硬件需求来完成的，例如，处理器性能、内存大小和本地存储空间。</p>
+<p>IaaS环境允许云用户对其资源配置和使用进行更高层次的控制。IaaS提供的IT资源通常是未配置好的，管理的责任直接落在云用户身上。</p>
+<p><strong>PaaS</strong>。PaaS交付模型是预先定义好的已就绪环境，一般由已经部署好和配置好的IT资源组成。已就绪环境由一组已安装的IT资源组成，可以被云用户使用和定制，云用户使用这些环境在云内远程开发和配置自身的服务与应用程序。</p>
+<p>典型的已就绪环境包括预安装的IT资源，如数据库、中间件、开发环境、开发工具和管理工具。发展至今，出现了一些新兴的PaaS产品，包括图像识别、语音识别、通信服务、Docker等。</p>
+<p><strong>SaaS</strong>。通常将软件程序定位成共享的云服务。SaaS交付模型一般是使一个可重用云服务对大多数云用户可用。</p>
+<p>云用户对SaaS实现的管理权限非常有限。用户无需任何的技术支持与设备购买，仅需前期一次性费用支付——包括项目实施费加软件租赁费。SaaS提供商会负责软件和网络设施的搭建、前期实施以及后期维护，并且通过技术保证企业数据安全。典型的应用包括商用的ERP系统、企业通信系统等。</p>
+<h2 id="4、云计算部署模型"><a href="#4、云计算部署模型" class="headerlink" title="4、云计算部署模型"></a>4、云计算部署模型</h2><p>根据云环境的所有权、大小和访问方式来进行划分，有四种常见的云部署模型。</p>
+<ul>
+<li>公有云</li>
+<li>社区云</li>
+<li>私有云</li>
+<li>混合云</li>
+</ul>
+<p>公有云。云服务提供商提供的可公共访问的云环境。</p>
+<p>社区云。类似于公有云，但是访问被限制为特定的用户社区。</p>
+<p>私有云。仅被一家组织所拥有，只能组织内部访问。</p>
+<p>混合云。有两个或多个部署模型组成的云环境。例如，云用户可能选择将处理敏感数据的云服务器部署到私有云上，而将其他不敏感的云服务部署到公有云上。</p>
+<h2 id="5、云计算优缺点"><a href="#5、云计算优缺点" class="headerlink" title="5、云计算优缺点"></a>5、云计算优缺点</h2><p>云计算对中小企业发展友好，可以充分利用成熟的资源和应用服务，使企业将精力放在核心业务上，省去了对底层资源维护的麻烦。但是另一方面，其技术架构天然决定了其会在安全和管理方面存在挑战。</p>
+<p>1）优点</p>
+<ul>
+<li>降低成本。不用购买硬件，不用购买软件，相关云服务由服务提供商维护，省去了维护成本。</li>
+<li>优化性能。由于云计算具有弹性服务的特征，当需要更多的IT资源，可以快速的进行扩展。</li>
+<li>可用性和可靠性。云服务提供商更注重可用性和可靠性，具有完备的备份恢复机制，具有更强大的容灾能力。</li>
+</ul>
+<p>2） 缺点</p>
+<ul>
+<li>数据安全。多个云用户的数据可能存储在同一台硬件上，因此，多个云用户实际上都在使用同一个硬件资源。另一方面，云用户的数据不再由自己掌控，转为由云服务提供商掌控，这对云服务提供商的管理提出了极高的要求。</li>
+<li>运营管控。云用户对云资源的管理控制地域企业内部IT资源的管理控制。如果服务提供商提供的服务不可靠，云用户很难进行维护。</li>
+<li>各云服务提供商之间的可移植性低。各公用云服务提供商都存在一定程度的私有化，采用的技术方案可能也存在差异。云用户在各服务商之间进行迁移可能存在难度。</li>
+<li>法律法规问题。当数据和IT资源被第三方云服务提供商处理时，其地理位置可能会在云用户控制之外，这可能引起各种法律法规问题。</li>
+</ul>
+<h1 id="二、云计算关键技术"><a href="#二、云计算关键技术" class="headerlink" title="二、云计算关键技术"></a>二、云计算关键技术</h1><p>云计算由一些主要的技术组件支撑起整个服务，这些组件是云计算的关键功能和特点得以实现。</p>
+<h2 id="1、宽带网络"><a href="#1、宽带网络" class="headerlink" title="1、宽带网络"></a>1、宽带网络</h2><p>所有云都必须连接到网络，云用户和云提供者通常利用Internet进行通信。现有的宽带网络，带宽越来越大，网络连接速度越来越快，云服务也因此能够获得更高的性能体验。</p>
+<p>网络互联架构的主要组件是使用网络路由器和交换机的无连接分组交换与基于路由器的互联。网络的带宽和延迟会影响云服务QoS（服务质量）的因素，而网络堵塞会对云服务有巨大的影响。</p>
+<h2 id="2、数据中心技术（集群）"><a href="#2、数据中心技术（集群）" class="headerlink" title="2、数据中心技术（集群）"></a>2、数据中心技术（集群）</h2><p>数据中心是集中存放IT资源的地方，包括服务器、数据库、网络与通信设备以及软件系统。数据中心是规模庞大的集群。</p>
+<p>虚拟化。数据中心包含物理和虚拟的IT资源。虚拟化平台将物理计算和网络IT资源抽象成虚拟化部件，这样更容易进行资源分配、操作、释放、监视和控制。</p>
+<p>标准化与模块化。数据中心以标准化商业硬件为基础，用模块化架构进行设计，整个多个相同的基础设施模块和设备，具备可扩展性、可增长性和快捷替换硬件的特点。除此之外，还可以实现规模经济。</p>
+<p>自动化。数据中心将配置、打补丁、监控等任务自动化。</p>
+<p>高可用性。数据中心采用了高冗余度设计，为应对系统故障，数据中心通常具有冗余的不间断电源、综合布线、环境控制子系统；为了负载均衡，则有冗余的通信链路和集群硬件。</p>
+<p>数据中心的IT硬件具有增强的计算能力、存储容量和网络硬件。工作较重的处理由标准化的商用高性能服务器来执行。数据中心有专门的存储系统保存庞大的数字信息，以满足巨大的存储容量需求，这些存储系统包含了以阵列形式组织的大量硬盘。数据中心需要大量网络硬件来实现多层次互联。</p>
+<h2 id="3、虚拟化技术"><a href="#3、虚拟化技术" class="headerlink" title="3、虚拟化技术"></a>3、虚拟化技术</h2><p>虚拟化是将物理IT资源转换为虚拟IT资源的过程。目前虚拟化技术方案有Xen、KVM、Hyper—V</p>
+<p>大多数IT资源都能够被虚拟化，包括：</p>
+<ul>
+<li>服务器（server）—— 一个物理服务器可以抽象为一个虚拟服务器</li>
+<li>存储设备（storage）—— 一个物理存储设备可以抽象为一个虚拟存储设备或者虚拟磁盘</li>
+<li>网络（network）—— 物理路由器和交换机可以抽象为逻辑网络，如VLAN</li>
+<li>电源（power）—— 一个物理UPS（不间断电源）和电源分配单元可以抽象为通常意义上的虚拟UPS</li>
+</ul>
+<p>用虚拟化软件创建新的虚拟服务器是，首先是分类物理IT资源，然后是按照操作系统，虚拟服务器使用自己的客户操作系统，它独立与创建虚拟服务器的操作系统。</p>
+<p><img src="http://note.youdao.com/yws/res/4048/WEBRESOURCEf0e3c074509eb3e689a66545d5e80f0a" alt="1406736-20181122162332286-50557820.png"></p>
+<p>运行虚拟化软件的物理服务器称为主机（host）或物理主机（physical host）。创建和管理虚拟服务器的软件叫做虚拟机管理器（virtual machine manager）或虚拟机监视器（Virtual Machine Monitor，VMM），最常见的称呼为虚拟机监视器（hypervisor）</p>
+<h3 id="1）硬件无关性"><a href="#1）硬件无关性" class="headerlink" title="1）硬件无关性"></a>1）硬件无关性</h3><p>非虚拟化环境下，操作系统是按照特定的硬件模型进行配置的，当硬件资源发生变化的时候，操作系统需要重新配置。</p>
+<p>而虚拟化是一个转换的过程，它对某些IT资源进行仿真，将其标准化为基于软件的版本，虚拟服务器能够自动解决软硬件不兼容的问题，很容易地就迁移到另一个虚拟机上。</p>
+<h3 id="2）服务器整合"><a href="#2）服务器整合" class="headerlink" title="2）服务器整合"></a>2）服务器整合</h3><p>虚拟化技术允许不同的虚拟服务器共享同一个物理服务器。这就是服务器整合。</p>
+<p>服务器整合带来了灵活性，使得不同的虚拟服务器可以在同一台主机上运行不同的客户操作系统。服务器整合是一项基本功能，它直接支持着长江的云特性，如按需使用、资源池、灵活性、可扩展性和可恢复性。</p>
+<h3 id="3）资源复制"><a href="#3）资源复制" class="headerlink" title="3）资源复制"></a>3）资源复制</h3><p>创建虚拟服务器就是生成虚拟磁盘映像，主机操作系统可以访问这些虚拟磁盘映像，因此，简单的文件操作可以用于实现虚拟服务器的复制、迁移和备份。资源复制的便捷性有助于实现自动化部署、迁移、回滚、备份和恢复。</p>
+<h3 id="4）基于操作系统的虚拟化"><a href="#4）基于操作系统的虚拟化" class="headerlink" title="4）基于操作系统的虚拟化"></a>4）基于操作系统的虚拟化</h3><p>基于操作系统的虚拟化指，在一个已存在的操作系统上安装虚拟化软件，这个已存在的操作系统称之为宿主操作系统（host operating system）。现在想生成虚拟服务器，只需要像安装其它软件一样，在宿主操作系统上安装虚拟化软件。由于宿主操作系统可以提供对硬件设备的必要支持，所以，即使虚拟化软件不能使用硬件驱动程序，操作系统虚拟化也可以解决硬件兼容问题。</p>
+<p>基于操作系统的虚拟化会产生于性能开销相关的如下需求和问题：</p>
+<ul>
+<li>宿主操作系统消耗CPU、内存和其他硬件IT资源。</li>
+<li>来自客户操作系统的硬件相关调用需要穿越多个层次，降低整体性能。</li>
+<li>这种虚拟化方案的开源项目为KVM，KVM作为Linux的内核，同Linux一起发布。KVM需要运行在硬件虚拟化特性的物理机上（Intel-VT/AMD-V）,KVM利用了硬件特性辅助提高访问物理机的性能。KVM只支持全虚拟化。</li>
+</ul>
+<p><img src="http://note.youdao.com/yws/res/4125/WEBRESOURCE38f5df01be4ae3d98696a26fdbb64f83" width="300" height="200" alt="基于操作系统"></p>
+<h3 id="5）基于硬件的虚拟化"><a href="#5）基于硬件的虚拟化" class="headerlink" title="5）基于硬件的虚拟化"></a>5）基于硬件的虚拟化</h3><p>基于硬件的虚拟化是指将虚拟化软件直接安装在物理主机硬件上，从而绕过宿主操作系统，基于硬件的虚拟化通常更高效。在这种情况下，虚拟化软件一般指<em>虚拟机管理程序</em>（hypervisor），hypervisor缺乏许多标准系统的功能，但对设备驱动程序和系统服务进行了优化，从而使虚拟服务器能够与硬件平台进行交互。</p>
+<p>这种虚拟化方案的开源项目为Xen，Xen采用了定制的微内核，采用特殊虚拟Domain 0作为管理平台，其他虚拟机通过Domain 0 访问硬件。Xen支持全虚拟化和准虚拟化。</p>
+<p><img src="http://note.youdao.com/yws/res/4128/WEBRESOURCE638b644a29f3a64805804828b305b8cc" width="300" height="200" alt="基于硬件"></p>
+<h3 id="6）虚拟化管理"><a href="#6）虚拟化管理" class="headerlink" title="6）虚拟化管理"></a>6）<a id="anchor">虚拟化管理</a></h3><p>虚拟化IT资源的管理由<strong><em>虚拟基础设施管理器</em></strong>（Virtualization Infrastructure Management， VIM）工具实现。该工具依靠集中管理模块对虚拟IT资源进行统一管理。</p>
+<p>VIM是一个商业化产品，它用于管理一系列跨多个服务器的IT资源。例如，VIM可以创建并管理跨不同物理服务器的虚拟机监控器的多个实例，或者将一个物理服务器上的虚拟服务器分配到另一个物理服务器上。</p>
+<p>VIM非常重要，可以实现以下任务：</p>
+<ul>
+<li>管理虚拟IT资源目标，如虚拟服务器镜像</li>
+<li>在可用的物理基础设施中分配和释放IT资源</li>
+<li>在有其他机制参与的条件下，协调IT资源，如资源恢复、负载均衡和故障转移</li>
+<li>在云服务实例的生命周期内，强制执行使用策略与安全规定</li>
+<li>监控IT资源的操作条件</li>
+</ul>
+<h2 id="4、Web技术"><a href="#4、Web技术" class="headerlink" title="4、Web技术"></a>4、Web技术</h2><p>Web技术经常被用于云服务的实现，许多云服务最后都通过Web应用进行展示。Web技术还可以在前端用于远程管理云IT资源，现在对云服务的管理都是通过Web应用进行。</p>
+<h2 id="5、多租户技术"><a href="#5、多租户技术" class="headerlink" title="5、多租户技术"></a>5、多租户技术</h2><p>多租户技术可以使多个用户在逻辑上同时访问一个应用。每个用户对应用的使用都有自己的视图，是该应用的一个专有实例，同时，每个用户都不会察觉到还有其他用户正在使用该应用。多租户应用确保每个用户都不会访问到不属于自己的数据和配置信息。</p>
+<h1 id="三、云计算典型产品"><a href="#三、云计算典型产品" class="headerlink" title="三、云计算典型产品"></a>三、云计算典型产品</h1><p>云服务提供商在IaaS层提供的产品几乎是一样的，只不过各个提供商有各自不同的命名；在PaaS层，各大提供商将安全服务、系统开发环境、人工智能环境进行打包，作为云服务提供；而在SaaS层，云服务提供商可以结合自身企业优势，提供成熟的软件产品，比如腾讯云提供的小程序、阿里云提供的客服平台等。</p>
+<p>当然，区分IaaS、PaaS、SaaS的意义不是很大，重要的不是区分我提供的是哪种类型的云服务，而是面向不同用户提供不同类型的产品。同一个语音识别的需求，开发者需要的开发环境SDK，而普通用户需要的可能是一个成熟的可以直接使用的产品供公司内部使用。</p>
+<p>云产品中最典型的是底层资源产品，后续的产品其实都是在底层资源上赋能，增加更多的IT资源，提供更多的服务。</p>
+<h3 id="1）云服务器"><a href="#1）云服务器" class="headerlink" title="1）云服务器"></a>1）云服务器</h3><p>各个云服务提供商有不同的叫法，亚马逊叫弹性计算云EC2（Elastic Compute Cloud），阿里叫做ECS（Elastic Compute Service，弹性计算服务），腾讯云叫做CVM（Cloud Virtual Machine），其实都是云服务器，只不过阿里和亚马逊强调了弹性。</p>
+<p>云服务器实际上是虚拟服务器，虚拟服务器是模拟物理服务器的软件，虚拟服务器是最基本的云环境构建模块，每个虚拟服务器都可以存储大量的IT资源。</p>
+<p>弹性通过弹性监听器实现。弹性监听是一个服务代理，它监控和追踪云服务和云服务之间的通信，根据负载率通过VIM实现弹性增加或减少资源。</p>
+<h3 id="2）云存储"><a href="#2）云存储" class="headerlink" title="2）云存储"></a>2）云存储</h3><p>云存储设备是指专门为基于云配置所涉及的存储设备。和物理服务器通过虚拟化技术生成虚拟服务器一样，云存储设备可以被虚拟化。</p>
+<h3 id="3）云网络"><a href="#3）云网络" class="headerlink" title="3）云网络"></a>3）云网络</h3><p>将网络基础设施虚拟化，形成一个逻辑网络布局，逻辑网络的边界由虚拟防火墙和虚拟网络组成，虚拟防火墙可以主动过滤被隔离网络。</p>
+<p>虚拟网络是一种包含至少部分是虚拟网络连接的计算机网络。在虚拟网络连接中，两个计算设备间不包含物理连接，而是通过网络虚拟化来实现。两种最常见的虚拟网络形式为基于协议的虚拟网络（如VLAN、VPN和VPLS等）和基于虚拟设备（如在hypervisor内部的网络连接虚拟机）的虚拟网络。</p>
+<p>虚拟防火墙功能简称为VSYS，是能够将一台物理防火墙在逻辑上划分成多个虚拟的防火墙，在用户的角度每个虚拟防火墙系统都可以被看成是一台完全独立的防火墙设备，拥有独立的系统资源，且能够实现防火墙的二层、三层（路由+NAT）转发、ACL控制、安全检测功能。</p>
+<h1 id="四、云计算管理机制"><a href="#四、云计算管理机制" class="headerlink" title="四、云计算管理机制"></a>四、云计算管理机制</h1><p>对于云服务产品，云用户需要在不知道实现原理的情况下，便捷地建立、配置、维护和监控IT资源，例如，云用户只需要执行建立操作，系统便能够自动创建一个虚拟服务器。这种需求衍生出来一系列管理机制及系统，这些管理机制成为了云平台与解决方案的一部分，是云技术架构的关键部分之一。</p>
+<h2 id="1、远程管理系统"><a href="#1、远程管理系统" class="headerlink" title="1、远程管理系统"></a>1、远程管理系统</h2><p>远程管理系统（remote administration system）机制云用户提供工具和用户界面来配置并管理云IT资源。远程管理系统能够建立一个入口以便访问各种底层系统的该控制与管理功能，包括了下面提到的资源管理、SLA管理和计费管理。</p>
+<p>通过远程管理控制台，云用户通常能够执行的任务包括：</p>
+<ul>
+<li>配置与建立云服务</li>
+<li>提供和释放IT资源</li>
+<li>监控云服务的状态、使用和性能</li>
+<li>监控QoS和SLA的实行</li>
+<li>管理租赁成本和使用费用</li>
+<li>管理用户账户、安全凭证、授权和访问控制</li>
+<li>跟踪对租赁服务器的内部与外部访问</li>
+<li>规划与评估IT资源供给</li>
+<li>容量规划</li>
+</ul>
+<h2 id="2、资源管理系统"><a href="#2、资源管理系统" class="headerlink" title="2、资源管理系统"></a>2、资源管理系统</h2><p>资源管理系统（resoure management system）机制帮助协调IT资源，以便响应云用户和云服务提供商执行的管理操作。该系统的核心是虚拟基础设施管理器（VIM），它用于协调服务器硬件，这样就可以从最合适的底层物理服务器创建虚拟服务器实例。上一节<a href="#anchor">虚拟化管理部分</a>已经提到过。</p>
+<h2 id="3、SLA管理系统"><a href="#3、SLA管理系统" class="headerlink" title="3、SLA管理系统"></a>3、SLA管理系统</h2><p>SLA（服务水平协议，Service-Level Agreement）管理系统收集服务质量指标数据，从而保证云服务的质量，当云服务提供商提供的服务没有满足SLA的要求，云用户有权利获得相应的补偿。</p>
+<p>部署SLA管理系统时，常常包含一个库，用于存储和检索被收集的基于预定义指标和报告参数的SLA数据。收集SLA数据还需要依靠一个或多个SLA监控机制，之后，根据活跃的云服务，使用与管理入口可以近实时地利用这些数据来提供持续的反馈，从而保证云服务监控的指标与合同中的SLA条款保持一致。</p>
+<p><img src="http://note.youdao.com/yws/res/4264/WEBRESOURCEb765722df3e7bba3f3d18ce0a6ba384e" width="400" height="300" alt="SLA管理系统机制"></p>
+<p>&emsp;&emsp;</p>
+<p>如上图所示，云用户与云服务交互（1）。SLA监控代理截获交换消息，评估此次交互，收集相关运行时数据。这些数据与定义在云服务SLA中的服务质量保证有关（2A）。收集到的数据存储在库中（2B），它是SLA管理系统的一部分（3）。通过使用与管理入口，外部云资源管理者可以发出查询和生成报告（4）；或者通过SLA管理系统的本地用户界面，内部云资源管理者可以发出查询和生成报告。</p>
+<p><strong>服务质量指标</strong>。服务质量指标是SLA管理系统需要采集的各项指标数据，是判断QoS的关键数据。云服务提供商发布是SLA规定了云服务QoS需要满足各项性能指标，主要有以下几个方面的指标：</p>
+<ul>
+<li>可用性 —— 运行时间，故障时间，服务持续时间<ol>
+<li>可用性比率指标：全部运行时间/全部时间</li>
+<li>停用时间指标：停用时间的日期时间 - 停用开始的日期时间</li>
+</ol>
+</li>
+<li>可靠性 —— 故障间最小间隔时间，保障措施的成功响应率<ol>
+<li>平均故障间隔指标：正常运行持续时间之和÷故障次数</li>
+<li>可靠性比率指标：成功响应的总数/请求总数</li>
+</ol>
+</li>
+<li>性能 —— 容量，响应时间和交付时间保障<ol>
+<li>网络容量指标：每秒以位维单位的带宽或吞吐量</li>
+<li>存储设备容量指标：以GB为单位的存储大小</li>
+<li>服务器容量指标：CPU大小，RAM大小，ROM大小</li>
+<li>Web应用容量指标：每分钟的请求速度</li>
+<li>实例启动时间指标：实例启动的日期时间 - 开始请求的日期时间</li>
+<li>响应时间指标：Σ（响应的日期时间 - 请求的日期时间）/请求总数</li>
+<li>完成时间指标：Σ（完成操作的日期时间 - 响应的日期时间）/ 请求总数</li>
+</ol>
+</li>
+<li>可扩展性 —— 容易扩展和响应性保障<ol>
+<li>存储可扩展性水平指标：增加存储后的存储空间大小</li>
+<li>服务器可扩展性水平指标：增加资源后，资源池中虚拟服务器的数量</li>
+<li>服务器可扩展性垂直指标：CPU个数，RAM大小</li>
+</ol>
+</li>
+<li>容灾能力 —— 切换和恢复的评价时间<ol>
+<li>平均切换时间指标：（切换完成日期时间 - 故障发生日期时间）/ 总故障次数。从一个严重故障的虚拟服务器切换到位于不同地理区域内的复制实例上所需的时间。</li>
+<li>平均系统恢复时间指标：（恢复日期时间 - 故障发生日期时间）/ 总的故障次数。弹性系统完整的执行一次从严重故障中恢复所需要的时间。</li>
+</ol>
+</li>
+</ul>
+<p>每个服务指标都需要是可量化的、可重复的、可比较的、容易获得的。</p>
+<h2 id="4、计费管理系统"><a href="#4、计费管理系统" class="headerlink" title="4、计费管理系统"></a>4、计费管理系统</h2><p>计费管理系统（billing management system）机制专门用于手机和处理使用数据，设计云服务提供商的结算和云用户的计费。计费管理系统依靠按使用付费监控器来收集运行时的使用数据，这些数据存储在系统组件的一个库中，然后为了计费、报告和开发票的目的，从库中提取数据。</p>
+<h1 id="五、云计算安全机制"><a href="#五、云计算安全机制" class="headerlink" title="五、云计算安全机制"></a>五、云计算安全机制</h1><h2 id="1、加密"><a href="#1、加密" class="headerlink" title="1、加密"></a>1、加密</h2><p>加密机制是一种数字编码系统，用来将明文数据编码成为受保护的、不可读的密文。</p>
+<p>加密机制可以帮助解决流量窃听、恶意媒介、授权不足和信任边界重叠这样一些安全威胁。</p>
+<p>加密机制包括以下几种：</p>
+<ul>
+<li>对称加密。加解密使用相同的密钥。</li>
+<li><p>非对称加密。加解密使用两个不同的密钥，称为私钥和公钥。</p>
+</li>
+<li><p>哈希。单向、不可逆的数据包括形式，常用于密码存储。</p>
+</li>
+<li>数字签名。通过身份验证判断数据真实性和完整性。数字签名技术是将摘要信息用发送者的私钥加密，与原文一起传送给接收者。接收者用自己的公钥解密被加密的摘要信息，然后用HASH函数对收到的原文产生一个摘要信息，与解密的摘要信息对比。如果相同，则说明收到的信息是完整的，在传输过程中没有被修改，否则说明信息被修改过</li>
+</ul>
+<h2 id="2、单点登录"><a href="#2、单点登录" class="headerlink" title="2、单点登录"></a>2、单点登录</h2><p>单点登录（Single Sign-On）机制使得云用户安全代理认证后，再访问该云用户拥有的其他云服务时，不需要重新认证。</p>
+<h2 id="3、基于云的安全组"><a href="#3、基于云的安全组" class="headerlink" title="3、基于云的安全组"></a>3、基于云的安全组</h2><p>基于虚拟资源的分割过程创建安全组，而不是基于物理硬件创建安全组。运行在同一物理服务器上的过个虚拟服务器可以分别有多个云用户使用，因而各虚拟服务器分别属于不同的云安全组。当一个安全组出现问题时，不会影响到另外一个安全组虚拟服务器的安全使用。</p>
+<h2 id="4、强化的虚拟服务器映像"><a href="#4、强化的虚拟服务器映像" class="headerlink" title="4、强化的虚拟服务器映像"></a>4、强化的虚拟服务器映像</h2><p>虚拟服务器是从虚拟服务器映像（或虚拟机映像）的模板配置创建出来的。通过强化，将不必要的软件从系统中剥离、去除冗余的程序、管理不必要的服务器端口、关闭不使用的服务、关闭内部根账户和宾客访问，能够帮助限制被攻击者利用的潜在漏洞。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/云计算/" rel="tag"># 云计算</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/12/SQL进阶用法-1/" rel="next" title="SQL进阶用法(1)">
+                <i class="fa fa-chevron-left"></i> SQL进阶用法(1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2020/03/16/云计算概念及原理/"
+           data-title="云计算概念及原理" data-url="http://harderk.github.io/2020/03/16/云计算概念及原理/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/profile.jpg"
+               alt="HarderK" />
+          <p class="site-author-name" itemprop="name">HarderK</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/HarderK" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、云计算基本概念"><span class="nav-number">1.</span> <span class="nav-text">一、云计算基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、什么是云计算"><span class="nav-number">1.1.</span> <span class="nav-text">1、什么是云计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、云计算的特性"><span class="nav-number">1.2.</span> <span class="nav-text">2、云计算的特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、云计算交付模型"><span class="nav-number">1.3.</span> <span class="nav-text">3、云计算交付模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、云计算部署模型"><span class="nav-number">1.4.</span> <span class="nav-text">4、云计算部署模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、云计算优缺点"><span class="nav-number">1.5.</span> <span class="nav-text">5、云计算优缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、云计算关键技术"><span class="nav-number">2.</span> <span class="nav-text">二、云计算关键技术</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、宽带网络"><span class="nav-number">2.1.</span> <span class="nav-text">1、宽带网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、数据中心技术（集群）"><span class="nav-number">2.2.</span> <span class="nav-text">2、数据中心技术（集群）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、虚拟化技术"><span class="nav-number">2.3.</span> <span class="nav-text">3、虚拟化技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1）硬件无关性"><span class="nav-number">2.3.1.</span> <span class="nav-text">1）硬件无关性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2）服务器整合"><span class="nav-number">2.3.2.</span> <span class="nav-text">2）服务器整合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3）资源复制"><span class="nav-number">2.3.3.</span> <span class="nav-text">3）资源复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4）基于操作系统的虚拟化"><span class="nav-number">2.3.4.</span> <span class="nav-text">4）基于操作系统的虚拟化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5）基于硬件的虚拟化"><span class="nav-number">2.3.5.</span> <span class="nav-text">5）基于硬件的虚拟化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6）虚拟化管理"><span class="nav-number">2.3.6.</span> <span class="nav-text">6）虚拟化管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、Web技术"><span class="nav-number">2.4.</span> <span class="nav-text">4、Web技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、多租户技术"><span class="nav-number">2.5.</span> <span class="nav-text">5、多租户技术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、云计算典型产品"><span class="nav-number">3.</span> <span class="nav-text">三、云计算典型产品</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1）云服务器"><span class="nav-number">3.0.1.</span> <span class="nav-text">1）云服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2）云存储"><span class="nav-number">3.0.2.</span> <span class="nav-text">2）云存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3）云网络"><span class="nav-number">3.0.3.</span> <span class="nav-text">3）云网络</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、云计算管理机制"><span class="nav-number">4.</span> <span class="nav-text">四、云计算管理机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、远程管理系统"><span class="nav-number">4.1.</span> <span class="nav-text">1、远程管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、资源管理系统"><span class="nav-number">4.2.</span> <span class="nav-text">2、资源管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、SLA管理系统"><span class="nav-number">4.3.</span> <span class="nav-text">3、SLA管理系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、计费管理系统"><span class="nav-number">4.4.</span> <span class="nav-text">4、计费管理系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、云计算安全机制"><span class="nav-number">5.</span> <span class="nav-text">五、云计算安全机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、加密"><span class="nav-number">5.1.</span> <span class="nav-text">1、加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、单点登录"><span class="nav-number">5.2.</span> <span class="nav-text">2、单点登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、基于云的安全组"><span class="nav-number">5.3.</span> <span class="nav-text">3、基于云的安全组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、强化的虚拟服务器映像"><span class="nav-number">5.4.</span> <span class="nav-text">4、强化的虚拟服务器映像</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HarderK</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"HarderK"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Xb11wsw7jgovBnGkXq40fcgy-gzGzoHsz", "Xo9UPGzSmktlyaalRiFNJBq0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
