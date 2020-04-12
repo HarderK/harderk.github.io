@@ -411,7 +411,7 @@
 <li>entries(),返回一个键值对的遍历器  </li>
 </ol>
 <p>以上三个方法在总结（1）数组扩展部分都有讲</p>
-<ol>
+<ol start="4">
 <li>forEach(),是不是想起了什么，对就是ES5中数组的forEach()遍历方法。  </li>
 </ol>
 <p><strong>由于Set只有值没有键，所以keys()和values()行为一致，可以理解为key和value是相同的</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">6</span>]);</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> item <span class="keyword">of</span> s.keys()) &#123;</div><div class="line">	<span class="built_in">console</span>.log(item);</div><div class="line">&#125;</div><div class="line"></div><div class="line">s.forEach(<span class="function">(<span class="params">value, key</span>) =&gt;</span> &#123;</div><div class="line">	<span class="built_in">console</span>.log(value, key);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
@@ -452,6 +452,8 @@
 <li>使得数据结构的成员能够按照某种次序排列。</li>
 <li>供<code>for...of</code>遍历使用。</li>
 </ol>
+</blockquote>
+<blockquote>
 <p>遍历过程：创建一个指针对象，指向当前数据结构的起始位置，第一次调用next方法，可以将指针指向第一个成员，接下来每次调用指向下一个成员，直到指向数据结构的结束位置。</p>
 </blockquote>
 <ul>
@@ -686,7 +688,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -704,7 +706,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
